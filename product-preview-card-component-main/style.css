@@ -1,0 +1,171 @@
+:root{
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-primary-300: hsl(158, 36%, 17%);
+    --clr-secondary-200: hsl(30, 38%, 92%);
+    
+    --clr-neutral-900: hsl(212, 21%, 14%);
+    --clr-neutral-400: hsl(228, 12%, 48%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --ff-base: "Montserrat", serif;
+    --ff-accent: "Fraunces", serif;
+
+    --fw-regular:500;
+    --fw-bold:700;
+}
+
+
+/* 1. Use a more-intuitive box-sizing model */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.7;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+
+  body{
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--clr-neutral-400);
+    background-color: var(--clr-secondary-200);
+
+    /* for this project */
+    display: grid;
+    place-content: center;
+    margin: 1rem; 
+    min-height: 100vh;
+  }
+
+  /* prizing style */
+  .prize{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+
+  }
+
+ /* product styles */
+ 
+ .product{
+    --content-spaccing:1rem;
+    --content-padding: 1.5rem;
+    background-color: var(--clr-neutral-100);
+    border-radius: 0.7rem;
+    overflow: hidden;
+    display: grid;
+    max-width: 600px;
+    align-content: center;
+    
+
+ }
+
+ @media (min-width: 600px) {
+    .product{
+      grid-template-columns: 1fr 1fr;
+    }
+ }
+
+ .product_content{
+    /* border: 2px solid black; */
+    display: grid;
+    gap: var(--content-spaccing);
+    padding: var(--content-padding);
+
+ }
+
+.product_catagory{
+    font-size: 0.8571rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+ }
+
+.product_title{
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--clr-neutral-900);
+    font-weight: 900;
+    line-height:1;
+    
+}
+
+.prize{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.prize .product_price{
+    font-size: 2rem;
+    font-family: var(--ff-accent);
+    color: var(--clr-primary-400);
+    font-weight: 900;
+}
+
+.button {
+  cursor: pointer;
+  border-radius: .5rem;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.56rem 1.6rem;
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+  font-weight: var(--fw-bold);
+  gap: 0.8rem;
+}
+.button[data-icon="cart-icon"]::before{
+  content: "";
+  background-image: url(images/icon-cart.svg);
+  height: 16px;
+  width: 15px;
+  /* background-color: blue; */
+}
+
+.button:is(:hover , :focus){
+  background-color:var(--clr-primary-300) ;
+}
+
+
+
+
